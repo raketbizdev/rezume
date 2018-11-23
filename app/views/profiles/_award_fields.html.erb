@@ -1,0 +1,17 @@
+<div class="mb-2">
+	<div class="nested-fields">
+		<div class="form-group">
+			<%= f.label :award_name %>	
+		  	<%= f.text_field :award_name, class: "form-control", placeholder: :award_name %>
+		</div>
+		<div class="form-group">
+			<%= f.label :award_details %>	
+		  	<%= f.text_area :award_details, class: "form-control", placeholder: :award_details %>
+		</div>
+			<%= link_to_remove_association f, class: "mb-2 btn btn-outline-danger" do %>
+			Delete <i class="fas fa-trash-alt"></i>
+			<% end %>
+
+	</div>
+	<hr>
+</div>

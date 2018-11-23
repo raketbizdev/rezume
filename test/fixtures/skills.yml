@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skill_name: MyString
+  skill_mastery: MyString
+  profile: one
+
+two:
+  skill_name: MyString
+  skill_mastery: MyString
+  profile: two

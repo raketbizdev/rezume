@@ -1,0 +1,144 @@
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+<div class="row bg-light-gray">
+  <div class="col-md-5 col-lg-4 col-xl-4 bg-gray pr-0">
+      <section id="profile" class="mt-5 mr-3">
+          <div id="profile-pic-container" class="container py-0">
+              <div id="resume-picture" class="rounded-circle bg-white"></div>
+          </div>
+      </section>
+      <section id="contact" class="mt-3">
+          <div>
+              <h1 class="h5 text-white mb-0 font-weight-bold text-uppercase">Contact</h1>
+              <hr class="bg-white mt-0">
+          </div>
+          <div class="mr-3">
+              <p class="text-white"><i class="fas fa-map-marker-alt"></i>&nbsp;<%= @profile.address %></p>
+              <ul class="fa-ul text-white list-unstyled">
+                  <li><span class="fa-li"><i class="fas fa-mobile-alt"></i></span>&nbsp;<%= @profile.mobile %></li>
+                  <li><span class="fa-li"><i class="fas fa-phone"></i></span>&nbsp;<%= @profile.phone %></li>
+                  <li><span class="fa-li"><i class="far fa-envelope"></i></span>&nbsp;<%= @profile.email %></li>
+                  <li><span class="fa-li"><i class="fas fa-globe"></i></span>&nbsp;<%= @profile.website %></li>
+              </ul>
+          </div>
+      </section>
+      <section id="social">
+          <div>
+              <h1 class="h5 text-white mb-0 font-weight-bold text-uppercase">Social</h1>
+              <hr class="bg-white mt-0">
+          </div>
+          <div class="mr-3">
+              <ul class="fa-ul text-white list-unstyled">
+                <% @profile.socials.each do |social| %>
+                  <li><span class="fa-li"><%= social.social_media_icon.html_safe %></span>&nbsp;
+                    <%= link_to social.social_media_name, social.social_media_url, class: "text-white" %>
+                  </li>
+                  <% end %> 
+              </ul>
+          </div>
+      </section>
+      <section id="awards">
+          <div>
+              <h1 class="h5 text-white mb-0 font-weight-bold text-uppercase">Awards And Recognition</h1>
+              <hr class="bg-white mt-0">
+          </div>
+          <div class="mr-3">
+              <ul class="fa-ul text-white list-unstyled">
+                <% @profile.awards.each do |award| %>
+                  <li><span class="fa-li"><i class="far fa-star"></i></span><span class="d-inline-block font-weight-bold"><%= award.award_name %></span><span class="d-inline-block small"><%= award.award_details %></span></li>
+                  <% end %>                   
+              </ul>
+          </div>
+      </section>
+  </div>
+  <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 offset-lg-0 offset-xl-0 pb-5">
+      <section class="d-inline-block mt-5 w-100" id="my-name">
+          <div class="mt-4">
+              <h1 id="letter-spacing" class="text-uppercase m-0 text-gray font-weight-bold"><%= @profile.first_name %> <%= @profile.middle_name %> <%= @profile.last_name %></h1>
+              <h6 class="m-0 text-gray text-uppercase font-weight-light letter-spacing"><%= @profile.position %></h6>
+          </div>
+      </section>
+      <section class="d-block float-none mt-5 w-100" id="work-experience">
+          <div class="d-flex" id="works-experience-header">
+              <h1 class="mr-2"><i class="fa fa-cog h1 text-gray"></i></h1>
+              <div class="w-100 mt-1">
+                  <h5 id="letter-spacing" class="text-uppercase m-0 text-gray font-weight-bold h4">&nbsp;Work Experience</h5>
+                  <hr>
+              </div>
+          </div>
+          <% @profile.work_experiences.each do |experience| %>
+            <div class="container border-right ml-3 position-relative">
+                <div id="bullet" class="small-bullet rounded-circle"></div>
+                <div class="row">
+                    <div class="col-md-4 mt-3">
+                        <h6 class="font-weight-bold"><%= experience.start_year %> - <%= experience.end_year %></h6>
+                    </div>
+                    <div class="col-md-8 mt-3">
+                        <h6 class="font-weight-bold m-0"><%= experience.work_position %></h6>
+                        <p><%= experience.work_description %></p>
+                        <ul class="fa-ul">
+                          <% experience.responsibilities.each do |responsibility| %>
+                            <li><span class="fa-li"><i class="fas fa-hand-point-right"></i></span>  <span><%= responsibility.list_of_responsibility %></span></li>
+                          <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+      </section>
+      <section class="d-block float-none mt-5 w-100" id="education">
+          <div class="d-flex" id="education-header">
+              <h1 class="mr-2"><i class="fas fa-graduation-cap h1 text-gray"></i></h1>
+              <div class="w-100 mt-1">
+                  <h5 id="letter-spacing" class="text-uppercase m-0 text-gray font-weight-bold h4">Educations</h5>
+                  <hr>
+              </div>
+          </div>
+          <% @profile.educations.each do |education| %>
+            <div class="container border-right ml-3 position-relative">
+                <div id="bullet" class="small-bullet rounded-circle"></div>
+                <div class="row">
+                    <div class="col-md-4 mt-3">
+                        <h6 class="font-weight-bold"><%= education.start_study %> - <%= education.year_graduated %></h6>
+                    </div>
+                    <div class="col-md-8 mt-3">
+                        <h5 class="font-weight-bold m-0"><%= education.course %></h5>
+                        <h6 class="font-weight-light font-italic m-0 "><%= education.school %></h6>
+                        <p class="mt-2"><%= education.course_description %></p>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+
+      </section>
+      <section class="d-block float-none mt-5 w-100" id="skills">
+          <div class="d-flex" id="skill-header">
+              <h1 class="mr-2"><i class="fas fa-briefcase h1 text-gray"></i></h1>
+              <div class="w-100 mt-1">
+                  <h5 id="letter-spacing" class="text-uppercase m-0 text-gray font-weight-bold h4">Skills &amp; Expertise</h5>
+                  <hr>
+              </div>
+          </div>
+          <div id="skill-body" class="container">
+              <div id="skill-container" class="row">
+                <% @profile.skills.each_slice(2) do |skills| %>
+                  <% skills.each do |skill| %>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <h6><%= skill.skill_name %></h6>
+                            </div>
+                            <div class="col-xl-8">
+                                <div class="progress border-0">
+                                    <div class="progress-bar" aria-valuenow="<%= skill.skill_mastery %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= skill.skill_mastery %>%;"><%= skill.skill_mastery %></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+          </div>
+      </section>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card mb-3">
+    <h5 class="card-header">Info</h5>
+    <div class="card-body">
+      <div class="form-group">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, id: :profile_first_name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :middle_name %>
+        <%= form.text_field :middle_name, id: :profile_middle_name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, id: :profile_last_name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :position %>
+        <%= form.text_field :position, id: :profile_position, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :address %>
+        <%= form.text_area :address, id: :profile_address, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :mobile %>
+        <%= form.text_field :mobile, id: :profile_mobile, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :phone %>
+        <%= form.text_field :phone, id: :profile_phone, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, id: :profile_email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :website %>
+        <%= form.text_field :website, id: :profile_website, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <h5 class="card-header">Social</h5>
+    <div class="card-body"> 
+      <%= form.fields_for :socials do |social| %>
+        <%= render 'social_fields', f: social %>
+      <% end %>
+      <div class='my-4'>
+        <%= link_to_add_association 'Add social', form, :socials, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <h5 class="card-header">Awards & Recognition</h5>
+    <div class="card-body">
+      <%= form.fields_for :awards do |award| %>
+        <%= render 'award_fields', f: award %>
+      <% end %>
+      <div class='my-4'>
+        <%= link_to_add_association 'Add Award', form, :awards, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <h5 class="card-header">Work Experiences</h5>
+    <div class="card-body">
+      <%= form.fields_for :work_experiences do |work_experience| %>
+        <%= render 'work_experience_fields', f: work_experience %>
+      <% end %>
+      <div class='my-4'>
+        <%= link_to_add_association 'Add work Experience', form, :work_experiences, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <h5 class="card-header">Educations</h5>
+    <div class="card-body">
+      <%= form.fields_for :educations do |education| %>
+        <%= render 'education_fields', f: education %>
+      <% end %>
+      <div class='my-4'>
+        <%= link_to_add_association 'Add Education', form, :educations, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <h5 class="card-header">Skills</h5>
+    <div class="card-body">
+      <%= form.fields_for :skills do |skill| %>
+        <%= render 'skill_fields', f: skill %>
+      <% end %>
+      <div class='my-4'>
+        <%= link_to_add_association 'Add skill', form, :skills, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

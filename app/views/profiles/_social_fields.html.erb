@@ -1,0 +1,10 @@
+<div class="nested-fields">
+	<div class="form-inline">	
+	  	<%= f.text_field :social_media_icon, class: "form-control mb-2 mr-sm-2 col-md-3", placeholder: :social_media_icon %>
+	  	<%= f.text_field :social_media_name, class: "form-control mb-2 mr-sm-2 col-md-4", placeholder: :social_media_name %>
+	  	<%= f.text_field :social_media_url, class: "form-control mb-2 mr-sm-2 col-md-4", placeholder: :social_media_url %>
+		<%= link_to_remove_association f, class: "mb-2 btn btn-outline-danger" do %>
+		<i class="fas fa-trash-alt"></i>
+		<% end %>
+	</div> 
+</div>

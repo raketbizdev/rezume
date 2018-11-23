@@ -1,0 +1,9 @@
+<div class="nested-fields">
+	<div class="form-inline">	
+	  	<%= f.text_field :skill_name, class: "form-control mb-2 mr-sm-2 col-md-5", placeholder: :skill_name %>
+	  	<%= f.text_field :skill_mastery, class: "form-control mb-2 mr-sm-2 col-md-6", placeholder: :skill_mastery %>
+		<%= link_to_remove_association f, class: "mb-2 btn btn-outline-danger" do %>
+		<i class="fas fa-trash-alt"></i>
+		<% end %>
+	</div> 
+</div>

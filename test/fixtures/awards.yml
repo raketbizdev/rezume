@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  award_name: MyString
+  award_details: MyText
+  profile: one
+
+two:
+  award_name: MyString
+  award_details: MyText
+  profile: two

@@ -1,0 +1,37 @@
+<div class="mb-2">
+	<div class="nested-fields">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label :start_study %>	
+		  			<%= f.text_field :start_study, class: "form-control", placeholder: :start_study %>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label :year_graduated %>	
+				  	<%= f.text_field :year_graduated, class: "form-control", placeholder: :year_graduated %>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<%= f.label :course %>	
+		  	<%= f.text_field :course, class: "form-control", placeholder: :course %>
+		</div>
+		<div class="form-group">
+			<%= f.label :school %>	
+		  	<%= f.text_field :school, class: "form-control", placeholder: :school %>
+		</div>
+		<div class="form-group">
+			<%= f.label :course_description %>	
+		  	<%= f.text_area :course_description, class: "form-control", placeholder: :course_description %>
+		</div>
+			<%= link_to_remove_association f, class: "mb-2 btn btn-outline-danger" do %>
+			Delete <i class="fas fa-trash-alt"></i>
+			<% end %>
+
+	</div>
+	<hr>
+</div>

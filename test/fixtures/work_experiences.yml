@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_year: MyString
+  end_year: MyString
+  work_position: MyString
+  work_description: MyText
+  profile: one
+
+two:
+  start_year: MyString
+  end_year: MyString
+  work_position: MyString
+  work_description: MyText
+  profile: two

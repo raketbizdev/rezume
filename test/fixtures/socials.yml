@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  social_media_icon: MyString
+  social_media_name: MyString
+  social_media_url: MyString
+  profile: one
+
+two:
+  social_media_icon: MyString
+  social_media_name: MyString
+  social_media_url: MyString
+  profile: two

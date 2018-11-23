@@ -1,0 +1,48 @@
+<div class="mb-2">
+	<div class="nested-fields">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label :start_year %>	
+		  			<%= f.text_field :start_year, class: "form-control", placeholder: :start_year %>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label :end_year %>	
+				  	<%= f.text_field :end_year, class: "form-control", placeholder: :end_year %>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<%= f.label :work_position %>	
+		  	<%= f.text_field :work_position, class: "form-control", placeholder: :work_position %>
+		</div>
+		<div class="form-group">
+			<%= f.label :work_description %>	
+		  	<%= f.text_area :work_description, class: "form-control", placeholder: :work_description %>
+		</div>
+
+		<div class="card mb-3">
+			<h5 class="card-header">Responsibility</h5>
+			<div class="card-body">
+				<%= f.fields_for :responsibilities do |responsibility| %>
+					<%= render 'responsibility_fields', f: responsibility %>
+				<% end %>
+				<div class='my-4'>
+					<%= link_to_add_association 'Add Responsibility', f, :responsibilities, class: "btn btn-primary" %>
+				</div>
+			</div>
+		</div>
+
+
+			<%= link_to_remove_association f, class: "mb-2 btn btn-outline-danger" do %>
+			Delete <i class="fas fa-trash-alt"></i>
+			<% end %>
+
+	</div>
+
+	<hr>
+</div>
