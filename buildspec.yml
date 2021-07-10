@@ -18,8 +18,8 @@ phases:
       - usermod -a -G rvm `whoami`      
       - node --version
       - rvm version
-      - rvm install ruby-2.7.4
-      - rvm --default use ruby-2.7.4
+      - rvm install ruby-3.0.0
+      - rvm --default use ruby-3.0.0
       - apt install gcc g++ make
       - apt update
       - curl -fsSL https://deb.nodesource.com/setup_16.x
