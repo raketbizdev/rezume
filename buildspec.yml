@@ -4,6 +4,7 @@ run-as: root
 
 phases:
   install:
+    run-as: root
     commands:
       # - echo installing RVM
       - echo `whoami`
