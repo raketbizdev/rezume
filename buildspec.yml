@@ -10,6 +10,7 @@ phases:
       # - echo installing RVM
       - echo `whoami`
       # - `cd /home`
+      - apt install which
       - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
       - curl -sSL https://get.rvm.io | bash
       - . /usr/local/rvm/scripts/rvm
