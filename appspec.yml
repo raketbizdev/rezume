@@ -18,13 +18,13 @@ hooks:
       runas: root
   AfterInstall:
     - location: deployment_scripts/db-config.sh
-      runas: nginx
+      runas: root
     - location: deployment_scripts/install-gems.sh
-      runas: nginx
+      runas: root
     - location: deployment_scripts/compile-assets.sh
-      runas: nginx
+      runas: root
     - location: deployment_scripts/run-db-migrations.sh
-      runas: nginx
+      runas: root
 
   ApplicationStart:
     - location: deployment_scripts/finish-installation.sh
