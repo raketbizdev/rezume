@@ -14,4 +14,4 @@ cd /var/www/rezume/deployment
 # - Without development and test gems
 # - Using gemfile in current directory
 # - Also quietly. No need to generate all logs.
-RAILS_ENV=production bundle install --binstubs /var/www/rezume/shared/bin --gemfile ./Gemfile --path /var/www/rezume/shared/bundle --without development test --deployment --quiet
+RAILS_ENV=production bundle install # --binstubs /var/www/rezume/shared/bin --gemfile ./Gemfile --path /var/www/rezume/shared/bundle --without development test --deployment --quiet
