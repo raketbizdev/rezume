@@ -1,0 +1,31 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/rezume/deployment
+permissions:
+  - object: /var/www/rezume/deployment
+    owner: root
+    group: root
+    pattern: "*"
+    mode: 775
+    type:
+      - file
+      - directory
+hooks:
+  BeforeInstall:
+    - location: deployment_scripts/arrange-deployment-folders.sh
+      runas: root
+  AfterInstall:
+    - location: deployment_scripts/db-config.sh
+      runas: nginx
+    - location: deployment_scripts/install-gems.sh
+      runas: nginx
+    - location: deployment_scripts/compile-assets.sh
+      runas: nginx
+    - location: deployment_scripts/run-db-migrations.sh
+      runas: nginx
+
+  ApplicationStart:
+    - location: deployment_scripts/finish-installation.sh
+      runas: root
