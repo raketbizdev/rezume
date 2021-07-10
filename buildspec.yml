@@ -25,7 +25,7 @@ phases:
       - bundle exec install
   pre_build:
     commands:
-      - raisl db:migrate
+      - rails db:migrate
       - echo Rails installed
       # - cp config/database.yml.example config/database.yml
       # - RAILS_ENV=test bundle exec rake db:setup
