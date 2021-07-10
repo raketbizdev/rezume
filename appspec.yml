@@ -25,7 +25,6 @@ hooks:
       runas: root
     - location: deployment_scripts/run-db-migrations.sh
       runas: root
-
   ApplicationStart:
     - location: deployment_scripts/finish-installation.sh
       runas: root
