@@ -17,10 +17,23 @@ phases:
       - rvm get stable --autolibs=enable
       
       - echo add usergrop rvm
-      - usermod -a -G rvm `whoami`
-      # - echo run rvm.sh
-      # - source /etc/profile.d/rvm.sh
+      - usermod -a -G rvm `whoami`      
+      - node --version
       - rvm version
+      - rvm install ruby
+      - rvm --default use ruby
+      - apt install gcc g++ make
+      - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      - curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+      - sudo apt update
+      - sudo apt install yarn nodejs
+      - yarn --version
+      - node --version
+      - gem update --system
+      - gem -v
+      - gem install rails -v 6.1.4
       - rails --version
       - echo Installing Bundler...
       - gem install bundler
