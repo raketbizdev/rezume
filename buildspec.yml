@@ -17,7 +17,8 @@ phases:
       # - usermod -a -G rvm `whoami`
       # - echo run rvm.sh
       # - source /etc/profile.d/rvm.sh
-      - rvm version
+      # - rvm version
+      - gem -v
       - rails --version
       - echo Installing Bundler...
       - gem install bundler
