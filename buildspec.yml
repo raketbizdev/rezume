@@ -4,7 +4,7 @@ phases:
     commands:
       # - echo installing RVM
       - echo `whoami`
-      - cd /home
+      - echo `cd /home`
       # - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
       # - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
       # - curl -sSL https://get.rvm.io | bash
@@ -17,16 +17,14 @@ phases:
       # - usermod -a -G rvm `whoami`
       # - echo run rvm.sh
       # - source /etc/profile.d/rvm.sh
-      # - rvm version
-      - gem -v
+      - rvm version
       - rails --version
       - echo Installing Bundler...
       - gem install bundler
       - bundle exec install
   pre_build:
     commands:
-      - ra
-      - rails db:migrate
+      - raisl db:migrate
       - echo Rails installed
       # - cp config/database.yml.example config/database.yml
       # - RAILS_ENV=test bundle exec rake db:setup
