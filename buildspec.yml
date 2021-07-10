@@ -10,9 +10,11 @@ phases:
       - curl -sSL https://get.rvm.io | bash -s stable --ruby
       - curl -sSL https://get.rvm.io | bash -s stable --rails
       - source /usr/local/rvm/scripts/rvm
+      - rvm get stable --autolibs=enable
+      - usermod -a -G rvm `whoami`
       - echo Installing Bundler...
       - gem install bundler
-      - bundle install
+      - bundle exec install
   pre_build:
     commands:
       - echo Rails installed
