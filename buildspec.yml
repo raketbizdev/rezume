@@ -49,3 +49,7 @@ phases:
     commands:
       - echo Running rspec tests...
       - bundle exec rspec spec
+artifacts:
+  files:
+    - '**/*'
+  name: resume-$(date +%Y-%m-%d)
