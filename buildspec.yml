@@ -11,7 +11,10 @@ phases:
       - curl -sSL https://get.rvm.io | bash -s stable --rails
       - source /usr/local/rvm/scripts/rvm
       - rvm get stable --autolibs=enable
+      - echo add usergrop rvm
       - usermod -a -G rvm `whoami`
+      - echo run rvm.sh
+      - source /etc/profile.d/rvm.sh
       - rvm version
       - echo Installing Bundler...
       - gem install bundler
