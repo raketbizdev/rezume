@@ -15,7 +15,7 @@ phases:
       - . /usr/local/rvm/scripts/rvm
       - rvm get stable --autolibs=enable
       - echo add usergroup rvm
-      - usermod -a -G rvm `whoami`      
+      - usermod -a -G rvm `whoami`
       - node --version
       - rvm version
       - rvm install ruby-3.0.0
