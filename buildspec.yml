@@ -2,25 +2,28 @@ version: 0.1
 phases:
   install:
     commands:
-      - echo installing RVM
+      # - echo installing RVM
       - echo `whoami`
-      - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-      - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-      - curl -sSL https://get.rvm.io | bash
-      - curl -sSL https://get.rvm.io | bash -s stable --ruby
-      - curl -sSL https://get.rvm.io | bash -s stable --rails
-      - source /usr/local/rvm/scripts/rvm
-      - rvm get stable --autolibs=enable
-      - echo add usergrop rvm
-      - usermod -a -G rvm `whoami`
-      - echo run rvm.sh
-      - source /etc/profile.d/rvm.sh
+      # - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+      # - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+      # - curl -sSL https://get.rvm.io | bash
+      # - curl -sSL https://get.rvm.io | bash -s stable --ruby
+      # - curl -sSL https://get.rvm.io | bash -s stable --rails
+      # - rvm get stable --autolibs=enable
+      # - source /usr/local/rvm/scripts/rvm
+      
+      # - echo add usergrop rvm
+      # - usermod -a -G rvm `whoami`
+      # - echo run rvm.sh
+      # - source /etc/profile.d/rvm.sh
       - rvm version
+      - rails --version
       - echo Installing Bundler...
       - gem install bundler
       - bundle exec install
   pre_build:
     commands:
+      - raisl db:migrate
       - echo Rails installed
       # - cp config/database.yml.example config/database.yml
       # - RAILS_ENV=test bundle exec rake db:setup
