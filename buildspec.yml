@@ -12,6 +12,7 @@ phases:
       - source /usr/local/rvm/scripts/rvm
       - rvm get stable --autolibs=enable
       - usermod -a -G rvm `whoami`
+      - rvm version
       - echo Installing Bundler...
       - gem install bundler
       - bundle exec install
