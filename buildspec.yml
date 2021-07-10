@@ -11,7 +11,7 @@ phases:
       - echo `whoami`
       # - `cd /home`
       - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-      - curl -sSL https://get.rvm.io | bash -s stable --ruby
+      - curl -sSL https://get.rvm.io | bash -s stable --ruby-2.7.4
       - curl -sSL https://get.rvm.io | bash -s stable --rails
       - . /usr/local/rvm/scripts/rvm
       - rvm get stable --autolibs=enable
@@ -20,8 +20,8 @@ phases:
       - usermod -a -G rvm `whoami`      
       - node --version
       - rvm version
-      - rvm install ruby
-      - rvm --default use ruby
+      - rvm install ruby-2.7.4
+      - rvm --default use ruby-2.7.4
       - apt install gcc g++ make
       - apt update
       - curl -fsSL https://deb.nodesource.com/setup_16.x
