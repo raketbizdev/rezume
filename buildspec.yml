@@ -1,6 +1,8 @@
 version: 0.2
 
 run-as: root
+env:
+  shell: bash
 
 phases:
   install:
@@ -11,7 +13,7 @@ phases:
       - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
       - curl -sSL https://get.rvm.io | bash -s stable --ruby
       - curl -sSL https://get.rvm.io | bash -s stable --rails
-      - source /usr/local/rvm/scripts/rvm
+      - source ./usr/local/rvm/scripts/rvm
       - rvm get stable --autolibs=enable
       
       - echo add usergrop rvm
