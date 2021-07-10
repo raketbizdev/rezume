@@ -2,6 +2,10 @@ version: 0.1
 phases:
   install:
     commands:
+      - echo installing RVM
+      - curl -sSL https://get.rvm.io | bash
+      - curl -sSL https://get.rvm.io | bash -s stable --ruby
+      - curl -sSL https://get.rvm.io | bash -s stable --rails
       - echo Installing Bundler...
       - gem install bundler
       - bundle install
