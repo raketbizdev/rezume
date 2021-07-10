@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
-gem 'rails', '~> 5.1.6'
+ruby '3.0.2'
+gem 'rails', '~> 6.1', '>= 6.1.4'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -16,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

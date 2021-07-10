@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-	root 'profiles#index'
+  	root 'pages#index'
+	# root 'profiles#index'
   	resources :profiles
   	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
