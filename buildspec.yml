@@ -36,7 +36,7 @@ phases:
       - gem install rails -v 6.1.4
       - echo Installing Bundler...
       - gem install bundler
-      - bundle exec install
+      - bundle install
       - rails --version
   pre_build:
     commands:
