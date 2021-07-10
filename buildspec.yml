@@ -4,17 +4,17 @@ phases:
     commands:
       # - echo installing RVM
       - echo `whoami`
-      - echo `cd /home`
-      # - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-      # - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-      # - curl -sSL https://get.rvm.io | bash
-      # - curl -sSL https://get.rvm.io | bash -s stable --ruby
-      # - curl -sSL https://get.rvm.io | bash -s stable --rails
-      # - rvm get stable --autolibs=enable
-      # - source /usr/local/rvm/scripts/rvm
+      - `cd /home`
+      - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+      - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+      - curl -sSL https://get.rvm.io | bash
+      - curl -sSL https://get.rvm.io | bash -s stable --ruby
+      - curl -sSL https://get.rvm.io | bash -s stable --rails
+      - rvm get stable --autolibs=enable
+      - source /usr/local/rvm/scripts/rvm
       
-      # - echo add usergrop rvm
-      # - usermod -a -G rvm `whoami`
+      - echo add usergrop rvm
+      - usermod -a -G rvm `whoami`
       # - echo run rvm.sh
       # - source /etc/profile.d/rvm.sh
       - rvm version
