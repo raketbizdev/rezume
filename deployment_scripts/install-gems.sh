@@ -5,8 +5,8 @@ cd /var/www/rezume/deployment
 
 # Get temporaray credentials for AWS CodeCommit
 # - Remember that the instance must have access rights to the CodeCommit repositories in Gemfile.
-git config --global credential.helper '!aws codecommit credential-helper $@'
-git config --global credential.UseHttpPath true
+# git config --global credential.helper '!aws codecommit credential-helper $@'
+# git config --global credential.UseHttpPath true
 
 # Install gems using bundler
 # - Bundle location: /var/www/rezume/shared/bundle
