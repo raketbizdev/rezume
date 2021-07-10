@@ -11,7 +11,8 @@ phases:
       - echo `whoami`
       # - `cd /home`
       - command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-      - curl -sSL https://get.rvm.io | bash
+      - curl -sSL https://get.rvm.io | bash -s stable --ruby
+      - curl -sSL https://get.rvm.io | bash -s stable --rails
       - . /usr/local/rvm/scripts/rvm
       - rvm get stable --autolibs=enable
       - echo add usergroup rvm
