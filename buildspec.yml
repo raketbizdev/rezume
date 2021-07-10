@@ -8,6 +8,7 @@ phases:
       - curl -sSL https://get.rvm.io | bash
       - curl -sSL https://get.rvm.io | bash -s stable --ruby
       - curl -sSL https://get.rvm.io | bash -s stable --rails
+      - source /usr/local/rvm/scripts/rvm
       - echo Installing Bundler...
       - gem install bundler
       - bundle install
