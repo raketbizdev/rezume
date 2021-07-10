@@ -25,12 +25,12 @@ phases:
       - bundle exec install
   pre_build:
     commands:
-      - rails db:migrate
+      # - rails db:migrate
       - echo Rails installed
       # - cp config/database.yml.example config/database.yml
       # - RAILS_ENV=test bundle exec rake db:setup
-      # - RAILS_ENV=test bundle exec rake db:migrate
+       - RAILS_ENV=test bundle exec rake db:migrate
   build:
     commands:
       - echo Running rspec tests...
-      - bundle exec rspec spec/
+      - bundle exec rspec spec
