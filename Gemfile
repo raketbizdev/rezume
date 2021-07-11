@@ -14,6 +14,7 @@ gem "bootstrap", ">= 4.3.1"
 gem 'jquery-rails'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'devise'
+gem 'bundler', '~> 2.2', '>= 2.2.23'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
