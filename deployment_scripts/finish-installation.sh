@@ -11,4 +11,4 @@ echo "Deployment finished at: "$DEPLOYMENT_TIME" UTC" > /var/www/rezume/deployme
 chown -R root:root /var/www/rezume/deployment
 chmod -R 775 /var/www/rezume/deployment
 
-service nginx restart
+systemctl restart nginx
